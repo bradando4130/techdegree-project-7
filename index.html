@@ -4,17 +4,232 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebApp Dashboard</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+        <title>WebApp Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;700&display=swap" rel="stylesheet">   
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <header>
+    <!-- top of webapp banner -->
+    <h1>WebApp</h1>
+
+    <div>
+        <svg></svg>
+        <div id='notifications'></div>
+    </div>
+
+    <h3>Student Name</h3>
+    <!-- left side nav bar -->
+    <nav>
+        <a>
+            <img src="" alt="">
+        </a>
+        <a>
+            <img src="" alt="">
+        </a>
+        <a>
+            <img src="" alt="">
+        </a>
+        <a>
+            <img src="" alt="">
+        </a>
+    </nav>
 </header>
 
-<body>
-    
+<body class="grid-container">
+    <main>
+        <!-- header banner for app -->
+        <div class="main-header">
+            <h2 class="headline">Dashboard</h2>
+            <div class="tab"></div>
+        </div>
+        
+        <!-- alert banner -->
+        <div class="alert" id="alert">
+            <!-- JS will go here when get around to do it -->
+        </div>  
+
+        <!-- line graph charts -->
+        <section class="traffic">
+            <div class="traffic-header">
+                <h3>Traffic</h3>
+                <ul class="traffic-nav">
+                    <li class="traffic-nav-link">Hourly</li>
+                    <li class="traffic-nav-link">Daily</li>
+                    <li class="traffic-nav-link">Weekly</li>
+                    <li class="traffic-nav-link">Monthly</li>
+                </ul>
+            </div>
+            <div class="widget-container-full">
+                <!-- element line graph will attach to -->
+                <canvas id="traffic-chart"></canvas>
+            </div>
+            
+        </section>  
+
+        <!-- bar graph -->
+        <section class="daily">
+            <h3>Daily Traffic</h3>
+            <div class="widget-container-half">
+                <!-- element bar graph will attach to here -->
+                <canvas id="daily-chart"></canvas>
+            </div>
+        </section>  
+
+        <!-- dohnut graph -->
+        <section class="mobile">
+            <h3>Mobile Users</h3>
+            <div class="widget-container-half">
+                <!-- element bar graph will attach to here -->
+                <canvas id="mobile-chart"></canvas>
+            </div>
+        </section> 
+
+        <!-- docial media stats section -->
+        <section class="social-stats">
+
+            <div class="social-container">
+                <div class="social-image">
+                    <!-- inline SVG not included for brevity -->
+                </div>
+                <div class="social-text">
+                    <p>Facebook</p>
+                    <p>10,666</p>
+                </div>
+            </div>
+            
+            <div class="social-container">
+                <div class="social-image">
+                    <!-- inline SVG not included for brevity -->
+                </div>
+                <div class="social-text">
+                    <p>Instagram</p>
+                    <p>21,666</p>
+                </div>
+            </div>
+
+            <div class="social-container">
+                <div class="social-image">
+                    <!-- inline SVG not included for brevity -->
+                </div>
+                <div class="social-text">
+                    <p>Twitter</p>
+                    <p>4,200</p>
+                </div>
+            </div>
+        </section>
+
+       <!-- new members section-->   
+       <section class="members">
+           <h3>New Members</h3>
+            <!-- separate container for each member -->
+           <div class="members-container">
+            <img src="images/member-1.jpg" class="profile-image">
+            <div class="members-text">
+                <p>Sharron Chambers</p>
+                <a href="#">bigshazza420@example.com</a>
+            </div>
+            <p>12/10/21</p>
+           </div>
+
+           <div class="members-container">
+            <img src="images/member-2.jpg" class="profile-image">
+            <div class="members-text">
+                <p>Dale Kerrigan</p>
+                <a href="#">tellhimhesdreamin@example.com</a>
+            </div>
+            <p>18/11/21</p>
+           </div>
+
+           <div class="members-container">
+            <img src="images/member-3.jpg" class="profile-image">
+            <div class="members-text">
+                <p>Kim Little</p>
+                <a href="#">lilkimbo69@example.com</a>
+            </div>
+            <p>13/12/21</p>
+           </div>
+
+           <div class="members-container">
+            <img src="images/member-4.jpg" class="profile-image">
+            <div class="members-text">
+                <p>Chris Adams</p>
+                <a href="#">youknowitskhradstho@example.com</a>
+            </div>
+            <p>14/12/21</p>
+           </div>
+       </section> 
+
+       <!-- recent activity section -->
+       <section class="recent-activity">
+            <h3>Recent Activity</h3>
+            <!-- separate container for each member -->
+            <div class="recent-activity-container">
+                <img src="images/member-1.jpg" class="profile-image">
+                <div class="recent-activity-text">
+                    <p>Sharron Chambers</p>
+                    <p>4 hours ago</p>
+                </div>
+            </div>
+
+            <div class="recent-activity-container">
+                <img src="images/member-2.jpg" class="profile-image">
+                <div class="recent-activity-text">
+                    <p>Dale Kerrigan</p>
+                    <p>5 hours ago</p>
+                </div>
+            </div>
+
+            <div class="recent-activity-container">
+                <img src="images/member-3.jpg" class="profile-image">
+                <div class="recent-activity-text">
+                    <p>Kim Little</p>
+                    <p>5 hours ago</p>
+                </div>
+            </div>
+
+            <div class="recent-activity-container">
+                <img src="images/member-4.jpg" class="profile-image">
+                <div class="recent-activity-text">
+                    <p>Chris Adams</p>
+                    <p>1 day ago</p>
+                </div>
+            </div>
+        </section> 
+
+        <!-- messaging widget -->
+       <section class="message">
+            <h3>Message User</h3>
+            <form class="widget-container">
+                <input type="text" placeholder="Search for user" class="form-field" id="userField">
+                <textarea placeholder="Message for user" class="form-area" id="messageField"></textarea>
+                <button class="button-primary" id="send">Send</button> 
+            </form>
+       </section>
+
+       <!-- local settings widget -->
+       <section class="settings">
+            <h3>Settings</h3>
+
+            <!-- custom CSS toggle code indert here -->
+            <!-- custom CSS toggle code indert here -->
+            
+            <select class="form-field" id="timezone">
+                <option disabled selected>Select a Timezone</option>
+                <option>UTC+8 (AWST)</option>
+                <option>UTC+9:30 (AECT)</option>
+                <option>UTC+10 (AEST)</option>
+            </select>
+            <div class="settings-button">
+                <button class="button-primary" id="save">Save</button>
+                <button class="button-disabled" id="cancel">Cancel</button>
+            </div>
+       </section>
+
+    </main>
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="chart.js"></script>
 </body>
