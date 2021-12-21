@@ -1,1 +1,72 @@
+@import "../utilities/variables.scss";
 
+* {
+    font-family: 'Martel Sans', sans-serif;
+}
+
+
+/* Header Styles */
+
+header {
+    background-color: $headerColour;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+h1 {
+    font-size: 1.3em;
+    margin: .45em;
+    padding: .2em;
+    flex-grow: 2;
+} 
+
+h3 {
+    font-size: .75em;
+    font-weight: 300;
+    padding: .3em;
+    margin-right: .3em;
+
+}
+
+.bellIcon {
+    height: 20px;
+    width: 20px;
+    padding: .5em;
+    padding-right: .75em;
+    margin: .5em;
+    fill: white;
+    border-right: solid #ccc8e0 1px;
+}
+
+.header-image {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    padding: .25em;
+}
+
+
+/* Nav Styles */
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: $navColour;
+    align-items: center;
+    padding: .1em;
+}
+
+nav > a {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-image {
+    height: 32px;
+    margin: 0 .3em;
+    filter: invert(1);
+    padding: .5em;
+}

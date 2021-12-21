@@ -1,4 +1,3 @@
-/*  Import Partials  */
 /* Grid partial styling */
 grid-container {
   display: grid;
@@ -58,4 +57,4 @@ widget-container-full, widget-container-half {
   }
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=grid.css.map */
