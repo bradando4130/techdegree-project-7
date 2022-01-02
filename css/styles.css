@@ -409,6 +409,18 @@ nav > a {
   padding: 0.5em;
 }
 
+/* Alert Banner */
+.alert-banner {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 10px;
+  margin: 1em;
+  background-color: #907be8;
+  border: solid #907be8 1px;
+  border-radius: 10px;
+}
+
 /*  Import Partials  */
 /* Grid partial styling */
 grid-container {
