@@ -152,6 +152,13 @@ send.addEventListener('click', () => {
     }
 });
 
+// -- Chart Update Function --//
+const updateChart = (chart, newData) => {
+    chart.data.labels = newData.labels;
+    chart.data.datasets[0].data = newData.datasets[0].data;
+    chart.update();
+}
+
 
 
 

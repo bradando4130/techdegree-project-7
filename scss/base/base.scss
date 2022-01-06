@@ -13,8 +13,8 @@ header {
     color: white;
     justify-content: space-between;
     align-items: center;
+    height: 65px;
 }
-
 
 h1 {
     font-size: 1.3em;
@@ -23,12 +23,22 @@ h1 {
     flex-grow: 2;
 } 
 
-h3 {
-    font-size: .75em;
+header h3 {
+    font-size: .8em;
+    padding: .2em;
     font-weight: 300;
-    padding: .3em;
     margin-right: .3em;
+}
 
+.main-header{
+    width: 40vw;
+    border-right: $border;
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    font-size: 1.2em;
 }
 
 .bellIcon {
@@ -57,16 +67,61 @@ nav {
     background-color: $navColour;
     align-items: center;
     padding: .1em;
+
+    a {
+        display: flex;
+        justify-content: center;
+    }
+    
 }
 
-nav > a {
-    display: flex;
-    justify-content: center;
-}
 
 .nav-image {
     height: 32px;
     margin: 0 .3em;
     filter: invert(1);
+    padding: .6em;
+}
+
+/* General Widget Styles */
+
+main > section {
+    border-bottom: $border;
     padding: .5em;
+    margin: .2em;
+}
+
+h3 {
+    margin: .5em;
+}
+
+grid-container > * {
+    border-bottom: $border;
+}
+
+
+/* Traffic Nav Widget */
+
+.traffic-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: .2em;
+}
+
+.traffic-nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: auto;
+    list-style-type: none;
+}
+
+/* Social Widget */
+
+.social-container {
+    display: flex;
+    border: $border;
+    border-radius: 5px;
+    padding: .6em;
+    align-items: center;
 }
