@@ -1,18 +1,62 @@
-/* Error: Undefined variable.
- *   ,
- * 4 |     background-color: $headerColour;
- *   |                       ^^^^^^^^^^^^^
- *   '
- *   scss\component\svgs.scss 4:23  @import
- *   scss\component\index.scss 4:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 4 \2502      background-color: $headerColour;\d\a   \2502                        ^^^^^^^^^^^^^\a   \2575 \a   scss\\component\\svgs.scss 4:23  @import\a   scss\\component\\index.scss 4:9  root stylesheet";
+/*  Import Partials  */
+/* Grid partial styling */
+grid-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas: "header" "navigation" "main";
 }
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+nav {
+  grid-area: navigation;
+}
+
+main {
+  display: grid;
+}
+
+widget-container-full, widget-container-half {
+  width: 95vw;
+}
+
+@media (min-width: 768px) {
+  grid-container {
+    grid-template-columns: 55px 1fr;
+    grid-template-areas: "header header" "navigation main";
+  }
+
+  main {
+    grid-template-columns: 50%;
+  }
+
+  .traffic, .social {
+    grid-column: 1/span 2;
+  }
+
+  .daily, .members, .message {
+    grid-column: 1/span 1;
+  }
+
+  .mobile, .activity, .settings {
+    grid-column: 2/span 1;
+  }
+
+  widget-container-full {
+    width: 90vw;
+  }
+
+  widget-container-half {
+    width: 45vw;
+  }
+}
+/* Social Svg Styling */
+
+/*# sourceMappingURL=index.css.map */
