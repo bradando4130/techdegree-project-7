@@ -9,4 +9,9 @@
     background-color: $headerColour;
     border: solid $headerColour 1px;
     border-radius: 10px;
+
+    p {
+        margin: .5em;
+    }
+
 }

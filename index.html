@@ -8,7 +8,8 @@
         <title>WebApp Dashboard</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;700&display=swap" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/css-toggle-switch@latest/dist/toggle-switch.css" />  
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -179,7 +180,7 @@
             <div class="recent-activity-container">
                 <img src="images/member-1.jpg" class="profile-image">
                 <div class="recent-activity-text">
-                    <p>Sharron Chambers</p>
+                    <p>Sharron Chambers commented on <strong>WebApp's SEO Tips</strong></p>
                     <p>4 hours ago</p>
                 </div>
             </div>
@@ -187,7 +188,7 @@
             <div class="recent-activity-container">
                 <img src="images/member-2.jpg" class="profile-image">
                 <div class="recent-activity-text">
-                    <p>Dale Kerrigan</p>
+                    <p>Dale Kerrigan liked the post <strong>Facebook's Changes for 2022</strong></p>
                     <p>5 hours ago</p>
                 </div>
             </div>
@@ -195,7 +196,7 @@
             <div class="recent-activity-container">
                 <img src="images/member-3.jpg" class="profile-image">
                 <div class="recent-activity-text">
-                    <p>Kim Little</p>
+                    <p>Kim Little commented on <strong>Facebook's Changes for 2022</strong></p>
                     <p>5 hours ago</p>
                 </div>
             </div>
@@ -203,7 +204,7 @@
             <div class="recent-activity-container">
                 <img src="images/member-4.jpg" class="profile-image">
                 <div class="recent-activity-text">
-                    <p>Chris Adams</p>
+                    <p>Chris Adams posted <strong>WebApp's SEO Tips</strong></p>
                     <p>1 day ago</p>
                 </div>
             </div>
@@ -215,23 +216,51 @@
             <form class="widget-container">
                 <input type="text" placeholder="Search for user" class="form-field" id="userField">
                 <textarea placeholder="Message for user" class="form-area" id="messageField"></textarea>
-                <button class="button-primary" id="send">Send</button> 
+                <button class="button-primary" id="send">SEND</button> 
             </form>
        </section>
 
        <!-- local settings widget -->
        <section class="settings" id="settings">
             <h3>Settings</h3>
+            <div class="settingSwitch">
+                <label class="switch-light switch-ios" onclick="">
+                    <input type="checkbox">
+                
+                    <strong class="switchLabel">
+                    Send Email Notifications
+                    </strong>
+                
+                    <span aria-hidden="true">
+                    <span>Off</span>
+                    <span>On</span>
+                    <a></a>
+                    </span>
+                </label>
+            </div>
 
-            <!-- custom CSS toggle code indert here -->
-            <!-- custom CSS toggle code indert here -->
-            
+            <div class="settingSwitch">
+                <label class="switch-light switch-ios" onclick="">
+                    <input type="checkbox">
+                
+                    <strong class="switchLabel">
+                        Sent Profile to Public
+                    </strong>
+                
+                    <span aria-hidden="true">
+                    <span>Off</span>
+                    <span>On</span>
+                    <a></a>
+                    </span>
+                </label>
+            </div>
             <select class="form-field" id="timezone">
                 <option disabled selected>Select a Timezone</option>
                 <option>UTC+8 (AWST)</option>
                 <option>UTC+9:30 (AECT)</option>
                 <option>UTC+10 (AEST)</option>
             </select>
+
             <div class="settings-button">
                 <button class="button-primary" id="save">Save</button>
                 <button class="button-disabled" id="cancel">Cancel</button>
