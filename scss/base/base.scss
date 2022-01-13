@@ -4,6 +4,25 @@
     font-family: 'Martel Sans', sans-serif;
 }
 
+main {
+    background-color: $inputField;
+}
+
+/* Widget Colour Standout Fix */
+
+.main-header,
+.alert,
+.traffic,
+.daily,
+.mobile,
+.social-stats,
+.members,
+.recent-activity,
+.message,
+.settings {
+    background-color: white;
+}
+
 
 /* Header Styles */
 
@@ -31,15 +50,20 @@ header h3 {
 }
 
 .main-header{
-    width: 40vw;
+    max-width: 130px;
     border-right: $border;
     display: flex;
     justify-content: center;
+    border-bottom: none;
 }
+
 
 h2 {
     font-size: 1.2em;
 }
+
+
+
 
 .bellIcon {
     height: 20px;

@@ -4,6 +4,24 @@
   font-family: "Martel Sans", sans-serif;
 }
 
+main {
+  background-color: #f5f5f5;
+}
+
+/* Widget Colour Standout Fix */
+.main-header,
+.alert,
+.traffic,
+.daily,
+.mobile,
+.social-stats,
+.members,
+.recent-activity,
+.message,
+.settings {
+  background-color: white;
+}
+
 /* Header Styles */
 header {
   background-color: #7477BF;
@@ -29,10 +47,11 @@ header h3 {
 }
 
 .main-header {
-  width: 40vw;
+  max-width: 130px;
   border-right: 1px solid grey;
   display: flex;
   justify-content: center;
+  border-bottom: none;
 }
 
 h2 {

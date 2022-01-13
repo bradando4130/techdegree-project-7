@@ -349,6 +349,24 @@ template {
   font-family: "Martel Sans", sans-serif;
 }
 
+main {
+  background-color: #f5f5f5;
+}
+
+/* Widget Colour Standout Fix */
+.main-header,
+.alert,
+.traffic,
+.daily,
+.mobile,
+.social-stats,
+.members,
+.recent-activity,
+.message,
+.settings {
+  background-color: white;
+}
+
 /* Header Styles */
 header {
   background-color: #7477BF;
@@ -374,10 +392,11 @@ header h3 {
 }
 
 .main-header {
-  width: 40vw;
+  max-width: 130px;
   border-right: 1px solid grey;
   display: flex;
   justify-content: center;
+  border-bottom: none;
 }
 
 h2 {
@@ -688,6 +707,7 @@ widget-container-full, widget-container-half {
 /* Social Svg Styling */
 canvas {
   max-width: 100%;
+  padding: 0.5em 0.4em;
 }
 
 /* Toggle Switch Additional Styling */
@@ -1120,27 +1140,28 @@ canvas {
   }
 
   .switch-ios.switch-toggle {
-    background-color: #D8D9DB;
+    background-color: white;
     border-radius: 30px;
-    box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 0;
+    box-shadow: none;
+    font-size: 0.95em;
   }
 
   .switch-ios.switch-toggle a {
     background-color: #4BD865;
-    border: 0.125em solid #D8D9DB;
+    border: 0.125em solid white;
     border-radius: 1.75em;
     transition: all 0.12s ease-out;
   }
 
   .switch-ios.switch-toggle label {
     height: 2.4em;
-    color: #888b92;
+    color: black;
     line-height: 2.4em;
     vertical-align: middle;
   }
 
   .switch-ios input:checked + label {
-    color: #3e4043;
+    color: white;
   }
 
   /* Holo Theme
@@ -1149,7 +1170,6 @@ canvas {
 .switch-light.switch-holo > span {
     background-color: #464747;
     border-radius: 1px;
-    box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 0;
     color: #fff;
     text-transform: uppercase;
   }

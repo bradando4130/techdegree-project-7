@@ -309,28 +309,30 @@
     opacity: 1;
     color: #fff; }
   .switch-ios.switch-toggle {
-    background-color: #D8D9DB;
+    background-color: white;
     border-radius: 30px;
-    box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 0; }
+    box-shadow: none;
+    font-size: .95em;
+     }
     .switch-ios.switch-toggle a {
       background-color: #4BD865;
-      border: 0.125em solid #D8D9DB;
+      border: 0.125em solid white;
       border-radius: 1.75em;
       transition: all 0.12s ease-out; }
     .switch-ios.switch-toggle label {
       height: 2.4em;
-      color: #888b92;
+      color: black;
       line-height: 2.4em;
       vertical-align: middle; }
   .switch-ios input:checked + label {
-    color: #3e4043; }
+    color: white; }
   /* Holo Theme
  */
   .switch-toggle.switch-holo,
   .switch-light.switch-holo > span {
     background-color: #464747;
     border-radius: 1px;
-    box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 0;
+    
     color: #fff;
     text-transform: uppercase; }
   .switch-holo label {

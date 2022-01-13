@@ -9,6 +9,11 @@ alertBanner.innerHTML =
         <p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete</p>
         <p class="alert-banner-close">x</p>
     </div>
+
+    <div class="alert-banner">
+        <p><strong>Alert:</strong> You have <strong>69</strong> unread messages</p>
+        <p class="alert-banner-close">x</p>
+    </div>
     `
 
 alertBanner.addEventListener('click', e => {
@@ -23,7 +28,34 @@ alertBanner.addEventListener('click', e => {
 const trafficCanvas = document.getElementById("traffic-chart");
 
 // store numerical display data in object literal
-let trafficData = {
+let trafficDataMonthly = {
+    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
+    datasets: [{
+        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+        backgroundColor: 'rgba(116, 119, 191, .3)',
+        borderWidth: 1,
+    }]
+};
+
+let trafficDataWeekly = {
+    labels: [],
+    datasets: [{
+        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+        backgroundColor: 'rgba(116, 119, 191, .3)',
+        borderWidth: 1,
+    }]
+};
+
+let trafficDataDaily = {
+    labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
+    datasets: [{
+        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+        backgroundColor: 'rgba(116, 119, 191, .3)',
+        borderWidth: 1,
+    }]
+};
+
+let trafficDataHourly = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
     datasets: [{
         data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
@@ -54,7 +86,7 @@ let trafficOptions = {
 
 let trafficChart = new Chart(trafficCanvas, {
     type: 'line',
-    data: trafficData,
+    data: trafficDataMonthly,
     options: trafficOptions
 });
 

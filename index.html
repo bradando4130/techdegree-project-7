@@ -60,12 +60,21 @@
         <section class="traffic" id="charts">
             <div class="traffic-header">
                 <h3>Traffic</h3>
-                <ul class="traffic-nav">
-                    <li class="traffic-nav-link">Hourly</li>
-                    <li class="traffic-nav-link">Daily</li>
-                    <li class="traffic-nav-link">Weekly</li>
-                    <li class="traffic-nav-link">Monthly</li>
-                </ul>
+                <div class="switch-toggle switch-ios">
+                    <input id="hour3" name="view3" type="radio" >
+                    <label for="hour3" onclick="">Hourly</label>
+                
+                    <input id="day3" name="view3" type="radio">
+                    <label for="day3" onclick="">Daily</label>
+                
+                    <input id="week3" name="view3" type="radio">
+                    <label for="week3" onclick="">Weekly</label>
+                
+                    <input id="month3" name="view3" type="radio" checked>
+                    <label for="month3" onclick="">Monthly</label>
+                
+                    <a></a>
+                </div>
             </div>
             <div class="widget-container-full">
                 <!-- element line graph will attach to -->
