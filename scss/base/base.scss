@@ -4,25 +4,22 @@
     font-family: 'Martel Sans', sans-serif;
 }
 
-main {
-    background-color: $inputField;
+
+/* General Widget Styles */
+
+main > section {
+    border-bottom: $border;
+    padding: .5em;
 }
 
-/* Widget Colour Standout Fix */
-
-.main-header,
-.alert,
-.traffic,
-.daily,
-.mobile,
-.social-stats,
-.members,
-.recent-activity,
-.message,
-.settings {
-    background-color: white;
+h3 {
+    margin: .5em;
+    font-size: 1em;
 }
 
+.grid-container > section {
+    border-bottom: $border;
+}
 
 /* Header Styles */
 
@@ -33,6 +30,7 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 65px;
+    border: none;
 }
 
 h1 {
@@ -49,21 +47,26 @@ header h3 {
     margin-right: .3em;
 }
 
-.main-header{
-    max-width: 130px;
-    border-right: $border;
+.main-header {
     display: flex;
-    justify-content: center;
-    border-bottom: none;
 }
 
+.headline{
+    max-width: 130px;
+    justify-content: center;
+    margin: 1em .65em;
+}
+
+.tab {
+    border-bottom: $border;
+    border-left: $border;
+    background-color: $inputField;
+    width: 100%;
+}
 
 h2 {
     font-size: 1.2em;
 }
-
-
-
 
 .bellIcon {
     height: 20px;
@@ -85,12 +88,12 @@ h2 {
 
 /* Nav Styles */
 
-nav {
+.navigation {
     display: flex;
     justify-content: center;
     background-color: $navColour;
     align-items: center;
-    padding: .1em;
+    padding: .4em;
 
     a {
         display: flex;
@@ -99,49 +102,51 @@ nav {
     
 }
 
-
 .nav-image {
     height: 32px;
-    margin: 0 .3em;
+    margin: 0 .5em;
     filter: invert(1);
     padding: .6em;
 }
 
-/* General Widget Styles */
+/* Alert Banner */
 
-main > section {
-    border-bottom: $border;
-    padding: .5em;
-    margin: .2em;
-}
-
-h3 {
-    margin: .5em 0;
-    font-size: 1em;
-}
-
-grid-container > * {
-    border-bottom: $border;
-}
-
-
-/* Traffic Nav Widget */
-
-.traffic-nav {
+.alert-banner {
     display: flex;
     justify-content: space-between;
-    padding: .2em;
+    color: white;
+    padding: 10px;
+    margin: 1em;
+    background-color: $headerColour;
+    border: solid $headerColour 1px;
+    border-radius: 10px;
 
-    .traffic-nav-link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex: auto;
-        list-style-type: none;
+    p {
+        margin: .5em;
     }
 
 }
 
+
+
+/* Traffic Nav Widget */
+
+.traffic-header {
+    padding: .5em .5em 0 .5em;
+
+    .switch-toggle.switch-ios {
+        width: 95%;
+    }
+}
+
+.widget-container-half {
+    width: 100%;
+    margin: 0;
+}
+
+.mobile {
+    border-left: $border;
+}
 
 
 /* Social Widget */
@@ -162,7 +167,7 @@ grid-container > * {
         width: 35px;
         height: 35px;
         padding: 16px;
-        margin: .3em;
+        margin: .5em;
     }
 
     .social-text {
@@ -196,7 +201,8 @@ grid-container > * {
 .members-container {
     display: block;
     border-bottom: $border;
-    padding: .8em;
+    margin: .8em;
+    padding: .5em;
     
     .members-text {
         text-align: center;
@@ -238,11 +244,22 @@ grid-container > * {
 .recent-activity-container {
     display: block;
     border-bottom: $border;
-    padding: .8em;
+    margin: .8em;
+    padding: .5em;
     
     .recent-activity-text {
         text-align: center;
         font-size: .85em;
+    }
+
+    p:first-of-type {
+        margin-top: .5em;
+        margin-bottom: 0;
+    }
+
+    p:last-of-type {
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }
 
@@ -250,12 +267,31 @@ grid-container > * {
     border: none;
 }
 
+.right-arrow {
+    display: none;
+    text-align: center;
+    font-size: 1.2em;
+    color: $headerColour;
+    padding: 1.5em 0;
+    font-weight: 700;
+    margin: auto .2em auto auto;
+}
+
+.members,
+.recent-activity {
+    padding: 0;
+}
+
 
 /* Messaging Widget */
 
+.widget-container {
+    display: flex;
+    flex-direction: column;
+}
 .message {
-    display: block;
-    justify-content: center;
+    align-items: center;
+    padding: .5em;
 
     .form-area {
         height: 6em;
@@ -267,12 +303,12 @@ grid-container > * {
         border: $border;
         border-radius: 5px;
         margin: .4em 0;
-        padding: 10px;
-        width: 92.5%;
+        padding: 8px;
+        width: auto;
     }
 
     .form-field {
-        height: 38px;
+        height: 1.8em;
     }
 
 
@@ -283,9 +319,7 @@ grid-container > * {
         width: 100%;
         height: 45px;
         color: white;
-        text-align: center;
-        margin: auto;
-        font-size: .9em;
+        margin: .5em auto;
         font-weight: 300;
     }
 }
@@ -305,13 +339,14 @@ grid-container > * {
     border-bottom: none;
 }
 
+
 .settings-button {
     display: flex;
     justify-content: space-between;
     margin: auto;
 
     button {
-        width: 47%;
+        width: 49%;
         height: 45px;
         color: white;
         border: $border;
@@ -319,6 +354,7 @@ grid-container > * {
         text-align: center;
     }
 }
+
 
 .settings-button :first-child {
     background-color: $headerColour;

@@ -1,6 +1,6 @@
-/* Grid partial styling */
+/* Grid partial base styling */
 
-grid-container {
+.grid-container {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
@@ -22,49 +22,156 @@ nav {
     grid-area: navigation;
 }
 
-main {
-    display: grid;
-}
-
-widget-container-full, widget-container-half {
+.widget-container-full, .widget-container-half {
     width: 95vw;
 }
 
-@media (min-width: 768px) {
-    grid-container {
+
+/* Media Queries over base style set at above 768px (tablet) */
+
+@media screen and (min-width: 768px) {
+    .grid-container {
         grid-template-columns: 55px 1fr;
+        grid-template-rows: auto;
         grid-template-areas: 
             'header header'
             'navigation main'
         ;
     }
 
-    main {
-        grid-template-columns: 50%;
-    }
-
-    .traffic, .social {
+    .main-header,
+    .alert,
+    .social {
         grid-column: 1 / span 2;
     }
 
-    .daily, .members, .message {
-        grid-column: 1 / span 1;
+    main {
+        grid-template-columns: 50%;
+        display: grid;
     }
 
-    .mobile, .activity, .settings {
-        grid-column: 2 / span 1;
+    .traffic-header {
+        display: flex;
+        justify-content: space-between;
+
+        .switch-toggle.switch-ios {
+            width: 45%;
+        }
     }
 
-    widget-container-full {
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        grid-column: 1;
+        justify-content: flex-start;
+        padding-top: 1em;
+    }
+
+    .traffic, 
+    .social-stats,
+    .members,
+    .recent-activity,
+    .message,
+    .settings {
+        grid-column: 1 / span 2;
+    }
+
+    .widget-container-full {
         width: 90vw;
     }
-
-    widget-container-half {
+    .widget-container-half {
         width: 45vw;
     }
 
+    .daily {
+        border-right: $border;
+    }
+    .social-container-fix {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .social-container {
+        width: 30%;
+    }
+
+    .profile-image {
+        margin-left: 0;
+        margin-right: 1em;
+    }
+
+    // fix for damn mismatching container heights
+    .recent-activity-container,
+    .members-container {
+        height: 6em;
+    }
+
+    .members-container {
+        display: flex;
+        flex-direction: row;
+
+        .members-text {
+            flex-grow: 3;
+            text-align: left;
+            margin: auto;
+        }
+
+        :last-child {
+            margin: auto;
+        }
+    }
+
+    .recent-activity-container {
+        display: flex;
+        flex-direction: row;
+
+        .recent-activity-text {
+            text-align: left;
+            padding: .5em;
+        }
+    }
+
+    .settingSwitch {
+        width: 50%;
+    }
+
+    .right-arrow {
+        display: block;
+    }
+    
 }
 
 
+
+@media screen and (min-width: 1024px) {
+
+    .daily, 
+    .members, 
+    .message {
+        grid-column: 1 / span 1;
+    }
+
+    .mobile, 
+    .recent-activity, 
+    .settings {
+        grid-column: 2 / span 1;
+    }
+
+
+    .members {
+        border-right: $border;
+    }
+
+
+    .message {
+        border-right: $border;
+    }
+
+    .widget-container {
+        display: flex;
+        padding-top: 1.3em;
+    }
+}
 
 
