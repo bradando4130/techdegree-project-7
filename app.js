@@ -6,12 +6,7 @@ const alertBanner = document.getElementById("alert");
 alertBanner.innerHTML = 
     `
     <div class="alert-banner">
-        <p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete</p>
-        <p class="alert-banner-close">x</p>
-    </div>
-
-    <div class="alert-banner">
-        <p><strong>Alert:</strong> You have <strong>69</strong> unread messages</p>
+        <p><strong>Alert:</strong> You have <strong>11</strong> overdue tasks to complete</p>
         <p class="alert-banner-close">x</p>
     </div>
     `
@@ -29,36 +24,36 @@ const trafficCanvas = document.getElementById("traffic-chart");
 
 // store numerical display data in object literal
 let trafficDataMonthly = {
-    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     datasets: [{
-        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500, 3000],
         backgroundColor: 'rgba(116, 119, 191, .3)',
         borderWidth: 1,
     }]
 };
 
 let trafficDataWeekly = {
-    labels: [],
+    labels: ["Wk 1", "Wk 2", "Wk 3", "Wk 4"],
     datasets: [{
-        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+        data: [150, 200, 75, 125],
         backgroundColor: 'rgba(116, 119, 191, .3)',
         borderWidth: 1,
     }]
 };
 
 let trafficDataDaily = {
-    labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
+    labels: ["S", "M", "T", "W", "T", "F", "S" ],
     datasets: [{
-        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+        data: [10, 15, 5, 50, 30, 45, 66, 70, 14],
         backgroundColor: 'rgba(116, 119, 191, .3)',
         borderWidth: 1,
     }]
 };
 
 let trafficDataHourly = {
-    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
+    labels: ["0-2", "2-4", "4-6", "6-8", "8-10", "10-12", "12-14", "14-16", "16-18", "18-20", "20-22", "22-24"],
     datasets: [{
-        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+        data: [3, 0, 0, 2, 1, 0, 0, 5, 7, 10, 1, 2],
         backgroundColor: 'rgba(116, 119, 191, .3)',
         borderWidth: 1,
     }]

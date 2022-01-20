@@ -420,6 +420,16 @@ h2 {
   border-right: solid #ccc8e0 1px;
 }
 
+.bell-dot {
+  background-color: lightgreen;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  position: absolute;
+  right: 15%;
+  top: 3%;
+}
+
 .header-image {
   border-radius: 50%;
   width: 35px;
