@@ -79,11 +79,28 @@ let trafficOptions = {
     }
 };
 
+// check for which radio toggle is checked to select which data to draw from
+let dataType;
+
+if (document.getElementById("month3").checked) {
+     dataType = trafficDataMonthly;
+} else if (document.getElementById("hour3").checked) {
+    dataType = trafficDataHourly;
+} else if (document.getElementById("day3").checked) {
+    dataType = trafficDataDaily;
+}  else if (document.getElementById("week3").checked) {
+    dataType = trafficDataWeekly;
+}
+// Function to draw chart
 let trafficChart = new Chart(trafficCanvas, {
     type: 'line',
-    data: trafficDataMonthly,
+    data: dataType,
     options: trafficOptions
 });
+
+
+// Draw Chart
+
 
 // -- Daily Chart Bar Chart Widget --//
 const dailyCanvas = document.getElementById("daily-chart");
