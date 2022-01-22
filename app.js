@@ -19,6 +19,50 @@ alertBanner.addEventListener('click', e => {
 });
 
 
+// --- Notifications Drop Down --- //
+
+const bellIcon = document.getElementById('bell');
+const notificationsDropDown = document.getElementById('notifications');
+const notificationOne = document.getElementById('notification-one');
+const notificationTwo = document.getElementById('notification-two');
+
+notificationOne.innerHTML = 
+    `
+    <div class="notification-one">
+        <p><a href=#><strong>Sharron</strong> liked one of your photos</p>
+        <p class="notification-banner-close-one">x</p>
+    </div>
+    `
+
+    notificationTwo.innerHTML = 
+    `
+    <div class="notification-two">
+        <p><a href=#><strong>Dale</strong> shared one of your posts</p>
+        <p class="notification-banner-close-two">x</p>
+    </div>
+    `
+// add event listener to bell icon, toggle notfication div on or off
+    bellIcon.addEventListener('click', e => {
+        notificationsDropDown.classList.toggle('show');
+        notificationOne.style.display = ""
+        notificationTwo.style.display = ""
+    });
+
+    
+// add event listener for click for notificatins to remove if x is clicked
+// close div container if no more notifications are showing
+ notificationsDropDown.addEventListener('click', e => {
+    const element = e.target;
+    if (element.classList.contains("notification-banner-close-one")) {
+        notificationOne.style.display = 'none';
+    } else if (element.classList.contains("notification-banner-close-two")) {
+       notificationTwo.style.display = "none";
+    }
+    if (notificationOne.style.display === "none" && notificationTwo.style.display === "none") {
+        notificationsDropDown.classList.remove('show');
+    };
+ });   
+
 // -- Traffic Chart Line Chart Widget --//
 const trafficCanvas = document.getElementById("traffic-chart");
 
@@ -79,28 +123,65 @@ let trafficOptions = {
     }
 };
 
-// check for which radio toggle is checked to select which data to draw from
-let dataType;
-
-if (document.getElementById("month3").checked) {
-     dataType = trafficDataMonthly;
-} else if (document.getElementById("hour3").checked) {
-    dataType = trafficDataHourly;
-} else if (document.getElementById("day3").checked) {
-    dataType = trafficDataDaily;
-}  else if (document.getElementById("week3").checked) {
-    dataType = trafficDataWeekly;
-}
-// Function to draw chart
+// Function to draw initial chart
 let trafficChart = new Chart(trafficCanvas, {
     type: 'line',
-    data: dataType,
+    data: trafficDataMonthly,
     options: trafficOptions
 });
 
+// draw new chart depending on which traffic toggle option is selected
 
-// Draw Chart
+let graphList = document.getElementById("graph-list");
 
+// add event listener on click of toggle, and add inUse class to it
+graphList.addEventListener('click', e => {
+    let chartData = e.target;
+    let currentData = document.querySelector('.inUse');
+
+    if (chartData.className !== "switch-toggle switch-ios graph-list" && chartData.tagName === 'LABEL') {
+        chartData.classList.add('inUse');
+        currentData.classList.remove('inUse');
+
+        // draw new chart
+        if (chartData.textContent.includes('Hourly')) {
+            trafficChart.destroy();
+            trafficChart = new Chart(trafficCanvas, {
+                type: 'line',
+                data: trafficDataHourly,
+                options: trafficOptions
+            });
+        }
+
+        if (chartData.textContent.includes('Weekly')) {
+            trafficChart.destroy();
+            trafficChart = new Chart(trafficCanvas, {
+                type: 'line',
+                data: trafficDataWeekly,
+                options: trafficOptions
+            });
+        }
+
+        if (chartData.textContent.includes('Monthly')) {
+            trafficChart.destroy();
+            trafficChart = new Chart(trafficCanvas, {
+                type: 'line',
+                data: trafficDataMonthly,
+                options: trafficOptions
+            });
+        }
+
+        if (chartData.textContent.includes('Daily')) {
+            trafficChart.destroy();
+            trafficChart = new Chart(trafficCanvas, {
+                type: 'line',
+                data: trafficDataDaily,
+                options: trafficOptions
+            });
+        }
+    }
+
+});
 
 // -- Daily Chart Bar Chart Widget --//
 const dailyCanvas = document.getElementById("daily-chart");
