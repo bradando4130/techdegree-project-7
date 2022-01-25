@@ -29,7 +29,7 @@ const notificationTwo = document.getElementById('notification-two');
 notificationOne.innerHTML = 
     `
     <div class="notification-one">
-        <p><a href=#><strong>Sharron</strong> liked one of your photos</p>
+        <p><a href="#recent-activity"><strong>Sharron</strong> liked one of your photos</p>
         <p class="notification-banner-close-one">x</p>
     </div>
     `
@@ -37,7 +37,7 @@ notificationOne.innerHTML =
     notificationTwo.innerHTML = 
     `
     <div class="notification-two">
-        <p><a href=#><strong>Dale</strong> shared one of your posts</p>
+        <p><a href="#recent-activity"><strong>Dale</strong> shared one of your posts</p>
         <p class="notification-banner-close-two">x</p>
     </div>
     `
@@ -285,19 +285,51 @@ const updateChart = (chart, newData) => {
 }
 
 
+// -- Local Storage for Settings --//
 
+let email = document.getElementById('email');
+let public = document.getElementById('public');
+let timezone = document.getElementById('timezone');
+let save = document.getElementById('save');
+let cancel = document.getElementById('cancel');
 
+function recallStorage() {
+    if (localStorage.email === 'true') {
+        email.checked = true;
+    } else {
+        email.checked = false;
+    } 
+    if (localStorage.public === 'true') {
+        public.checked = true;
+    } else {
+        public.checked = false;
+    } if (localStorage.timezone) {
+        timezone.value === localStorage.timezone;
+    } 
+};
 
+recallStorage();
 
+save.addEventListener('click', () => {
+    localStorage.setItem('email', email.checked);
+    localStorage.setItem('public', public.checked);
+    localStorage.setItem('timezone', timezone.value);
+});
 
+cancel.addEventListener('click', () => {
+   localStorage.removeItem('email'); 
+    localStorage.removeItem('public');
+    localStorage.removeItem('timezone');
+    email.checked = '';
+    public.checked = '';
+    timezone.value = '';
+});
 
+// Set timezone dropdown value to storage value or default
+var timeZoneValue = localStorage.getItem('timezone');
 
-
-
-
-
-
-
-
-
-
+if(timeZoneValue === null) {
+    document.getElementById('timezone').value = 'a';
+} else {
+    document.getElementById('timezone').value = timeZoneValue;
+}

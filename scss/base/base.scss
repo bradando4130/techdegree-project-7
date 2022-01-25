@@ -34,17 +34,17 @@ header {
 }
 
 h1 {
-    font-size: 1.3em;
+    font-size: 1.1em;
     margin: .45em;
     padding: .2em;
     flex-grow: 2;
 } 
 
 header h3 {
-    font-size: .8em;
+    font-size: .7em;
     padding: .2em;
     font-weight: 300;
-    margin-right: .3em;
+
 }
 
 .main-header {
@@ -77,6 +77,28 @@ h2 {
     fill: white;
     border-right: solid #ccc8e0 1px;
 }
+
+.bellIcon:hover {
+    animation: bell 1s ease-in backwards;
+}
+
+
+@keyframes bell {
+    20% {
+      transform: rotate(5deg);
+    }
+    40% {
+      transform: rotate(-5deg);
+    }
+    60% {
+      transform: rotate(10deg);
+    }
+    80% {
+      transform: rotate(-5deg);
+    }
+  }
+
+
 
 .bell-dot {
     background-color: lightgreen;
@@ -137,24 +159,31 @@ h2 {
 
 }
 
-/* NBotification Drop Down */
+.notification-one ,
+.notification-two {
+
+    p,
+    a {
+    text-decoration: none;
+    color: white;
+    }
+}
+
+/* Notification Drop Down */
 
 .notifications {
     display: none;
     position: absolute;
     padding: .5em;
-    background-color: $inputField;
+    background-color: $navColour;
     border-radius: 10px;
-    z-index: 2;
-
+    z-index: 5;
 }
 
+/* class to force show element */
 .show {
     display: inline-block;
 }
-
-
-
 
 /* Traffic Nav Widget */
 
@@ -366,7 +395,6 @@ h2 {
     border-bottom: none;
 }
 
-
 .settings-button {
     display: flex;
     justify-content: space-between;
@@ -381,7 +409,6 @@ h2 {
         text-align: center;
     }
 }
-
 
 .settings-button :first-child {
     background-color: $headerColour;
