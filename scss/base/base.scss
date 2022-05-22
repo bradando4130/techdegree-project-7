@@ -82,6 +82,10 @@ h2 {
     animation: bell 1s ease-in backwards;
 }
 
+#bell {
+    width: 25px;
+    height: 25px;
+}
 
 @keyframes bell {
     20% {
